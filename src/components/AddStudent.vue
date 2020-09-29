@@ -12,6 +12,9 @@
     <div class="main">
         <div class="container">
             <form class="appointment-form" id="appointment-form" @submit.prevent="Register">
+              <div class="alert-primary" v-if="feedback">{{feedback}}
+
+              </div>
                 <h2 class="jumbotron">Enroll with Studa Today</h2>
                 <div class="form-group-1">
                     <input type="text" name="name" id="name" placeholder="Your Name" v-model="name"/>
@@ -37,6 +40,9 @@
 </template>
 
 <script>
+// import firebase config file
+import db from '@/firebase/firebaseConfig';
+
 export default {
   name: 'AddStudent',
   data() {
@@ -45,11 +51,25 @@ export default {
       email: '',
       phone: '',
       path: '',
+      feedback: '',
     };
   },
   methods: {
     Register() {
-      console.log(this.path);
+      if (this.name && this.email && this.phone && this.path) {
+        db.collection('studa').add({
+          Name: this.name,
+          Email: this.email,
+          Path: this.path,
+          Phone: this.phone,
+        }).then(() => {
+          this.feedback = 'Record successfully added';
+        }).catch((err) => {
+          console.log(err);
+        });
+      } else {
+        this.feedback = 'Record not saved,check errors and try again';
+      }
     },
   },
 };
