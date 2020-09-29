@@ -1,62 +1,4 @@
-<template>
-  <div class="add-student">
-    <nav class="navbar navbar-light bg-info">
-      <a class="navbar-brand">StudentSmart</a>
-      <form class="form-inline">
-      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
-        <router-link :to="{name: 'GetStudents'}" class="text-light">See Students</router-link>
-      </button>
-  </form>
-</nav>
-
-    <div class="main">
-        <div class="container">
-            <form class="appointment-form" id="appointment-form" @submit.prevent="Register">
-                <h2 class="jumbotron">Enroll with Studa Today</h2>
-                <div class="form-group-1">
-                    <input type="text" name="name" id="name" placeholder="Your Name" v-model="name"/>
-                    <input type="email" name="email" id="email" placeholder="Email" v-model="email"/>
-                    <input type="number" name="phone_number" id="phone_number" placeholder="Phone number" v-model="phone"/>
-                    <div class="select-list">
-                      <label for="path" style="color:#ddd;">Path</label>
-                        <select name="course_type" id="course_type" v-model="path">
-                            <option value="web">Web Dev</option>
-                            <option value="mobile">Mobile Dev</option>
-                            <option value="machine learning">Machine Learning</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-submit">
-                    <input type="submit" name="submit" id="submit" class="submit" value="Register" />
-                </div>
-            </form>
-        </div>
-
-    </div>
-  </div>
-</template>
-
-<script>
-export default {
-  name: 'AddStudent',
-  data() {
-    return {
-      name: '',
-      email: '',
-      phone: '',
-      path: '',
-    };
-  },
-  methods: {
-    Register() {
-      console.log(this.path);
-    },
-  },
-};
-</script>
-
-<style scoped>
-  /* @extend display-flex; */
+/* @extend display-flex; */
 display-flex {
   display: flex;
   display: -webkit-flex; }
@@ -66,6 +8,34 @@ list-type-ulli, ul {
   list-style-type: none;
   margin: 0;
   padding: 0; }
+
+/* roboto-slab-300 - latin */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/roboto-slab/roboto-slab-v7-latin-300.eot");
+  /* IE9 Compat Modes */
+  src: local("Roboto Slab Light"), local("RobotoSlab-Light"), url("../fonts/roboto-slab/roboto-slab-v7-latin-300.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-slab/roboto-slab-v7-latin-300.woff2") format("woff2"), url("../fonts/roboto-slab/roboto-slab-v7-latin-300.woff") format("woff"), url("../fonts/roboto-slab/roboto-slab-v7-latin-300.ttf") format("truetype"), url("../fonts/roboto-slab/roboto-slab-v7-latin-300.svg#RobotoSlab") format("svg");
+  /* Legacy iOS */ }
+/* roboto-slab-regular - latin */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/roboto-slab/roboto-slab-v7-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local("Roboto Slab Regular"), local("RobotoSlab-Regular"), url("../fonts/roboto-slab/roboto-slab-v7-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-slab/roboto-slab-v7-latin-regular.woff2") format("woff2"), url("../fonts/roboto-slab/roboto-slab-v7-latin-regular.woff") format("woff"), url("../fonts/roboto-slab/roboto-slab-v7-latin-regular.ttf") format("truetype"), url("../fonts/roboto-slab/roboto-slab-v7-latin-regular.svg#RobotoSlab") format("svg");
+  /* Legacy iOS */ }
+/* roboto-slab-700 - latin */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/roboto-slab/roboto-slab-v7-latin-700.eot");
+  /* IE9 Compat Modes */
+  src: local("Roboto Slab Bold"), local("RobotoSlab-Bold"), url("../fonts/roboto-slab/roboto-slab-v7-latin-700.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-slab/roboto-slab-v7-latin-700.woff2") format("woff2"), url("../fonts/roboto-slab/roboto-slab-v7-latin-700.woff") format("woff"), url("../fonts/roboto-slab/roboto-slab-v7-latin-700.ttf") format("truetype"), url("../fonts/roboto-slab/roboto-slab-v7-latin-700.svg#RobotoSlab") format("svg");
+  /* Legacy iOS */ }
 a:focus, a:active {
   text-decoration: none;
   outline: none;
@@ -150,6 +120,23 @@ h3 {
 
 .clear {
   clear: both; }
+
+body {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #fff;
+  background-image: url("../images/body-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  -ms-background-size: cover;
+  background-position: center center;
+  font-weight: 400;
+  font-family: 'Roboto Slab';
+  margin: 0px; }
+
 .main {
   padding: 60px 0;
   position: relative; }
@@ -330,4 +317,4 @@ li.init {
   .appointment-form {
     padding: 50px 30px 70px 30px; } }
 
-</style>
+/*# sourceMappingURL=style.css.map */
